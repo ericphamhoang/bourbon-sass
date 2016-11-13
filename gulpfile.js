@@ -14,7 +14,11 @@ gulp.task('sass', function () {
 
     return gulp.src(['./sass/app.sass','./sass/vendor.sass'])
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass(
+            {
+                includePaths: require('bourbon').includePaths
+            }
+        ).on('error', sass.logError))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/'));
 });
