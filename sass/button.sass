@@ -1,0 +1,50 @@
+=button-flat
+  border: none
+  outline: none
+  box-shadow: none
+
+.lighter-hover
+  +button-flat
+  background: #008300
+  padding: 5px 10px
+  color: white
+  cursor: pointer
+  &:hover
+    background: lighten(#008300, 10%)
+
+.darker-hover
+  +button-flat
+  background: #008300
+  padding: 5px 10px
+  color: white
+  cursor: pointer
+  &:hover
+    background: darken(#008300, 10%)
+
+.gradient-top-bottom
+  +button-flat
+  @include background(linear-gradient(lighten(green, 30%), green) top repeat)
+  padding: 5px 10px
+  color: white
+  cursor: pointer
+
+.gradient-bottom-top
+  +button-flat
+  @include background(linear-gradient(lighten(green, 30%), green) bottom repeat)
+  padding: 5px 10px
+  color: white
+  cursor: pointer
+
+.gradient-left-right
+  +button-flat
+  @include background(linear-gradient(left, lighten(green, 30%), green) repeat)
+  padding: 5px 10px
+  color: white
+  cursor: pointer
+
+.gradient-right-left
+  +button-flat
+  @include background(linear-gradient(right, lighten(green, 30%), green) repeat)
+  padding: 5px 10px
+  color: white
+  cursor: pointer
